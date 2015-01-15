@@ -205,9 +205,28 @@ void test_filter_perform_filter_on_each_element_of_array_and_give_new_array(){
 	assertEqual(myFilter (array, length, functionPtr, &result) ,1);
 
 	for(i=0;i<4;i++){
-		printf("%d\t%d\n",result[i],expected[i] );
 		assertEqual(result[i], expected[i]);
 	};
 	free(result);
 };
 
+int lessThan5(float num){
+	return((num <5))?1:0;
+};
+void test_float_filter_perform_filter_on_each_element_of_array_and_give_new_array(){
+	int (*functionPtr)(float);
+	int length=9,i;
+	float array[]={-5.3,2.5,4.6,56.7,5.4,3.23};
+	float expected[]={-5.3,2.5,4.6,3.25};
+	float *result;
+
+	functionPtr = &lessThan5;
+
+	assertEqual(floatFilter (array, length, functionPtr, &result) ,1);
+
+	for(i=0;i<4;i++){
+		assertEqual(result[i], expected[i]);
+	};
+	free(result);
+};
+ 

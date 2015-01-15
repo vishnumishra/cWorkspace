@@ -48,7 +48,6 @@ int concat(int *array1, int len_of_array1, int *array2, int len_of_array2, int *
 
 int filter(int *array, int length, int threshold, int **result_array){
 
-
 	int i,j=0;
 
 	*result_array = (int*)malloc(sizeof(int)*length);
@@ -161,3 +160,16 @@ int myFilter(int *array, int length, int (*fun)(int), int **result){
 	return 1;
 };
 
+int floatFilter(float *array, int length, int (*fun)(float), float **result){
+	int i,j=0;
+	*result = calloc(length,sizeof(int));	
+	
+	for(i=0;i<length;i++){
+		if((*fun)(array[i])){
+			(*result)[j] = array[i];
+			printf("===%f=====\n",array[i]);
+			j++;
+		};
+	};
+	return 1;
+};
