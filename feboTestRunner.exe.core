@@ -1,22 +1,23 @@
 [main] feboTestRunner 1000 (0) exception: trapped!
-[main] feboTestRunner 1000 (0) exception: code 0xC0000005 at 0x403064
-[main] feboTestRunner 1000 (0) exception: ax 0x2 bx 0x402964 cx 0x4 dx 0x244FEA4
-[main] feboTestRunner 1000 (0) exception: si 0x4029A4 di 0x244FEC0 bp 0x244FE74 sp 0x244FE60
+[main] feboTestRunner 1000 (0) exception: code 0xC0000005 at 0x6105A395
+[main] feboTestRunner 1000 (0) exception: ax 0x18 bx 0xC39E19CD cx 0xC6C dx 0xA031EB8
+[main] feboTestRunner 1000 (0) exception: si 0x402D4D di 0x18 bp 0x244FE10 sp 0x244FDD4
 [main] feboTestRunner 1000 (0) exception: exception is: STATUS_ACCESS_VIOLATION
 [main] feboTestRunner 1000 (0) stack: Stack trace:
-[main] feboTestRunner 1000 (0) stack: frame 0: sp = 0x244FA00, pc = 0x6100A2C3
-[main] feboTestRunner 1000 (0) stack: frame 1: sp = 0x244FA3C, pc = 0x77AAB499
-[main] feboTestRunner 1000 (0) stack: frame 2: sp = 0x244FA60, pc = 0x77AAB46B
-[main] feboTestRunner 1000 (0) stack: frame 3: sp = 0x244FB10, pc = 0x77A60133
-[main] feboTestRunner 1000 (0) stack: frame 4: sp = 0x244FE74, pc = 0x4029E2
-[main] feboTestRunner 1000 (0) stack: frame 5: sp = 0x244FED4, pc = 0x40159B
-[main] feboTestRunner 1000 (0) stack: frame 6: sp = 0x244FEE0, pc = 0x4016AF
-[main] feboTestRunner 1000 (0) stack: frame 7: sp = 0x244FF00, pc = 0x61004402
-[main] feboTestRunner 1000 (0) stack: frame 8: sp = 0x244FF50, pc = 0x61004420
-[main] feboTestRunner 1000 (0) stack: frame 9: sp = 0x244FF5C, pc = 0x40319E
-[main] feboTestRunner 1000 (0) stack: frame 10: sp = 0x244FF6C, pc = 0x40103A
-[main] feboTestRunner 1000 (0) stack: frame 11: sp = 0x244FF88, pc = 0x765E338A
-[main] feboTestRunner 1000 (0) stack: frame 12: sp = 0x244FF94, pc = 0x77A89F72
-[main] feboTestRunner 1000 (0) stack: frame 13: sp = 0x244FFD4, pc = 0x77A89F45
-[main] feboTestRunner 1000 (0) stack: frame 14: sp = 0x244FFEC, pc = 0x0
-[main] feboTestRunner 1000 (0) stack: End of stack trace
+[main] feboTestRunner 1000 (0) stack: frame 0: sp = 0x244F974, pc = 0x6100A2C3
+[main] feboTestRunner 1000 (0) stack: frame 1: sp = 0x244F9B0, pc = 0x77AAB499
+[main] feboTestRunner 1000 (0) stack: frame 2: sp = 0x244F9D4, pc = 0x77AAB46B
+[main] feboTestRunner 1000 (0) stack: frame 3: sp = 0x244FA84, pc = 0x77A60133
+[main] feboTestRunner 1000 (0) stack: frame 4: sp = 0x244FE10, pc = 0x6101A5F9
+[main] feboTestRunner 1000 (0) stack: frame 5: sp = 0x244FE2C, pc = 0x403691
+[main] feboTestRunner 1000 (0) stack: frame 6: sp = 0x244FE50, pc = 0x402E9F
+[main] feboTestRunner 1000 (0) stack: frame 7: sp = 0x244FED4, pc = 0x40165B
+[main] feboTestRunner 1000 (0) stack: frame 8: sp = 0x244FEE0, pc = 0x40176F
+[main] feboTestRunner 1000 (0) stack: frame 9: sp = 0x244FF00, pc = 0x61004402
+[main] feboTestRunner 1000 (0) stack: frame 10: sp = 0x244FF50, pc = 0x61004420
+[main] feboTestRunner 1000 (0) stack: frame 11: sp = 0x244FF5C, pc = 0x4037EE
+[main] feboTestRunner 1000 (0) stack: frame 12: sp = 0x244FF6C, pc = 0x40103A
+[main] feboTestRunner 1000 (0) stack: frame 13: sp = 0x244FF88, pc = 0x765E338A
+[main] feboTestRunner 1000 (0) stack: frame 14: sp = 0x244FF94, pc = 0x77A89F72
+[main] feboTestRunner 1000 (0) stack: frame 15: sp = 0x244FFD4, pc = 0x77A89F45
+[main] feboTestRunner 1000 (0) stack: End of stack trace (more stack frames may be present)

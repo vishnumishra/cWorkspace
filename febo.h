@@ -1,4 +1,6 @@
 #include <stdio.h>
+// typedef int (fun)(int);
+
 int fibo(int numberOfTerms,int **arrayOfFibo);
 int concat(int *array1, int len_of_array1, int *array2, int len_of_array2, int **result_array);
 int filter(int *array, int length, int threshold, int **result_array);
@@ -11,3 +13,5 @@ int forEach(int *array,int length,int (*fun)(int));
 int char_forEach(char *array,int length,int (*fun)(char));
 int myFilter(int *array, int length, int (*fun)(int), int **result);
 int floatFilter(float *array, int length, int (*fun)(float), float **result);
+int stringFilter(char **src,int length,int(*fun)(char *),char ***result);
+int string_forEach(char **array,int length,int(*functionPtr)(char*));

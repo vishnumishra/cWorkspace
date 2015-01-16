@@ -143,9 +143,11 @@ int char_forEach(char *array,int length,int (*fun)(char)){
 		if(!(*fun)(array[i])){
 			flag=0;
 		};
+		array[i] = (*fun)(array[i]);
 	};
 	return flag;
 };
+
 
 int myFilter(int *array, int length, int (*fun)(int), int **result){
 	int i,j=0;	
@@ -157,7 +159,7 @@ int myFilter(int *array, int length, int (*fun)(int), int **result){
 			j++;
 		};
 	};
-	return 1;
+	return j;
 };
 
 int floatFilter(float *array, int length, int (*fun)(float), float **result){
@@ -167,9 +169,24 @@ int floatFilter(float *array, int length, int (*fun)(float), float **result){
 	for(i=0;i<length;i++){
 		if((*fun)(array[i])){
 			(*result)[j] = array[i];
-			printf("===%f=====\n",array[i]);
 			j++;
 		};
 	};
-	return 1;
+	return j;
 };
+
+int stringFilter(char **src,int length,int (*fun)(char *),char ***result){
+	int i,count=0,predicate;
+
+	*result = calloc(length,sizeof(char*));	
+
+	for(i=0;i<length;i++){
+		predicate = (*fun)(src[i]);
+		if(predicate){
+			(*result)[count] = src[i];
+			count++;
+		};
+	};
+	return count;
+};
+

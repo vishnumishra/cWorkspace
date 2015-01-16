@@ -173,7 +173,7 @@ void test_forEach_apply_function_on_each_element_of_array(){
 	};
 };
 
-int upperCase(char letter){
+int lowerCase(char letter){
 	if(letter >=65 && letter <=90){
 		return letter+32;
 	};
@@ -183,11 +183,19 @@ int upperCase(char letter){
 void test_char_forEach_perform_operation_on_each_element_of_array(){
 	int (*functionPtr)(char),length=6,i;
 	char array[]={'H','E','L','L','O','\0'};
-
-	functionPtr = &upperCase;
+	char expected[]={'h','e','l','l','o','\0'};
+	functionPtr = &lowerCase;
 
 	char_forEach(array,length,functionPtr);
+	for(i=0;i<length-1;i++){
+		assertEqual(expected[i], array[i]);
+	}
 };
+
+int strlength(char* string){
+	return strlen(string);
+};
+
 
 int isEven(int number){
 	return ((number%2)==0)?1:0;
@@ -202,7 +210,7 @@ void test_filter_perform_filter_on_each_element_of_array_and_give_new_array(){
 
 	functionPtr = &isEven;
 	
-	assertEqual(myFilter (array, length, functionPtr, &result) ,1);
+	assertEqual(myFilter (array, length, functionPtr, &result) ,4);
 
 	for(i=0;i<4;i++){
 		assertEqual(result[i], expected[i]);
@@ -215,18 +223,37 @@ int lessThan5(float num){
 };
 void test_float_filter_perform_filter_on_each_element_of_array_and_give_new_array(){
 	int (*functionPtr)(float);
-	int length=9,i;
+	int length=6,i;
 	float array[]={-5.3,2.5,4.6,56.7,5.4,3.23};
 	float expected[]={-5.3,2.5,4.6,3.25};
 	float *result;
 
 	functionPtr = &lessThan5;
 
-	assertEqual(floatFilter (array, length, functionPtr, &result) ,1);
+	assertEqual(floatFilter (array, length, functionPtr, &result) ,4);
 
 	for(i=0;i<4;i++){
 		assertEqual(result[i], expected[i]);
 	};
 	free(result);
 };
- 
+
+int filterHello(char* string){
+	return ((my_strcmp(string,"Hello"))==0)?1:0;
+};
+
+void test_srting_filter_perform_filter_on_each_element_of_a_string_array(){
+	int (*functionPtr)(char*),length=6;
+	char *src[] = {"hello","hiiii","Hello","tata","Hello","Hello"};
+	char *src1[]= {"hello","Hello","Helloo","Hello"};
+	char **result;
+	functionPtr = &filterHello;
+	assertEqual(stringFilter(src,length,functionPtr,&result),3);
+	free(result);
+	assertEqual(stringFilter(src1,4,functionPtr,&result),2);
+	free(result);
+};
+
+
+
+
