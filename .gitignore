@@ -1,3 +1,9 @@
 *.exe
 *.o
 *TestRunner.c
+./jsfunctions/*.exe
+./jsfunctions/*.o
+./jsfunctions/*TestRunner.c
+./jsfunctions/*.exe.core
+
+
